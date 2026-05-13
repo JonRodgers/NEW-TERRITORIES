@@ -289,6 +289,19 @@ header {
     color: #ff00ff;
 }
 
+.nav-menu .cta-button {
+    background: none;
+    color: var(--white);
+    padding: var(--spacing-sm) 0;
+    box-shadow: none;
+}
+
+.nav-menu .cta-button:hover {
+    color: #ff00ff;
+    transform: none;
+    box-shadow: none;
+}
+
 @media (min-width: 768px) {
     .menu-toggle {
         display: none;
