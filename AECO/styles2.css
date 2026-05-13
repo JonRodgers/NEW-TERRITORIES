@@ -236,7 +236,7 @@ header {
 .menu-toggle span {
     width: 24px;
     height: 2.5px;
-    background-color: #ff00ff;
+    background-color: var(--white);
     border-radius: 2px;
     transition: all var(--transition-normal);
 }
