@@ -223,7 +223,7 @@ header {
 
 /* Mobile Menu Toggle */
 .menu-toggle {
-    display: none;
+    display: flex;
     flex-direction: column;
     background: none;
     border: none;
@@ -236,7 +236,7 @@ header {
 .menu-toggle span {
     width: 24px;
     height: 2.5px;
-    background-color: var(--white);
+    background-color: #ff00ff;
     border-radius: 2px;
     transition: all var(--transition-normal);
 }
@@ -286,54 +286,10 @@ header {
 
 .nav-menu a:hover,
 .nav-menu a.active {
-    color: var(--accent-secondary);
+    color: #ff00ff;
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: var(--spacing-lg);
-    align-items: center;
-}
-
-nav a {
-    color: var(--text-secondary);
-    font-weight: 500;
-    font-size: 0.95rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: all var(--transition-normal);
-    position: relative;
-    display: block;
-    padding: var(--spacing-sm) 0;
-}
-
-nav a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--accent-primary);
-    transition: width var(--transition-normal);
-}
-
-nav a:hover {
-    color: var(--accent-primary);
-}
-
-nav a:hover::after {
-    width: 100%;
-}
-
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
-    }
-}
-
-@media (min-width: 769px) {
+@media (min-width: 768px) {
     .menu-toggle {
         display: none;
     }
