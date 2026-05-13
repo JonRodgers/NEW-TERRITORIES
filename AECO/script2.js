@@ -133,22 +133,38 @@ function validateForm(formData) {
 }
 
 // ============================================
-// 6. MOBILE MENU TOGGLE (if needed)
+// 6. MOBILE MENU TOGGLE
 // ============================================
 
-function initMobileMenu() {
+document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('nav ul');
+    const navMenu = document.querySelector('.nav-menu');
     
     if (menuToggle) {
+        // Toggle menu when hamburger button is clicked
         menuToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
             this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when a navigation link is clicked
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                menuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Close menu when Escape key is pressed
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                menuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
         });
     }
-}
-
-initMobileMenu();
+});
 
 // ============================================
 // 7. LAZY LOADING IMAGES (for future optimization)

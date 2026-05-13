@@ -215,7 +215,7 @@ header {
 
 /* Mobile Menu Toggle */
 .menu-toggle {
-    display: none;
+    display: flex;
     flex-direction: column;
     background: none;
     border: none;
@@ -245,41 +245,47 @@ header {
     transform: rotate(-45deg) translate(7px, -7px);
 }
 
+/* Navigation Menu */
+.nav-menu {
+    display: none;
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #000000;
+    flex-direction: column;
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-md);
+}
+
+.nav-menu.active {
+    display: flex;
+}
+
+.nav-menu li {
+    margin: var(--spacing-sm) 0;
+}
+
+.nav-menu a {
+    color: var(--white);
+    font-weight: 500;
+    transition: color var(--transition-fast);
+    display: block;
+    padding: var(--spacing-sm) 0;
+    font-family: 'Century Gothic', sans-serif;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--accent-secondary);
+}
+
 nav ul {
     display: flex;
     list-style: none;
     gap: var(--spacing-lg);
     align-items: center;
-}
-
-nav ul.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: var(--spacing-lg);
-    align-items: center;
-}
-
-@media (max-width: 768px) {
-    nav ul.nav-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: #0f0f0f;
-        flex-direction: column;
-        padding: var(--spacing-md);
-        box-shadow: var(--shadow-md);
-        gap: 0;
-    }
-
-    nav ul.nav-menu.active {
-        display: flex;
-    }
-
-    nav ul.nav-menu li {
-        margin: var(--spacing-sm) 0;
-    }
 }
 
 nav a {
@@ -311,6 +317,46 @@ nav a:hover {
 
 nav a:hover::after {
     width: 100%;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .nav-menu {
+        display: flex !important;
+        position: static;
+        background-color: transparent;
+        flex-direction: row;
+        padding: 0;
+        box-shadow: none;
+        gap: var(--spacing-lg);
+    }
+
+    .nav-menu li {
+        margin: 0;
+    }
+
+    .nav-menu a {
+        color: var(--text-secondary);
+        font-weight: 500;
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: var(--spacing-sm) 0;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+        color: var(--accent-primary);
+    }
 }
 
 .cta-button {
