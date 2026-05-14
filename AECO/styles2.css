@@ -291,13 +291,17 @@ header {
 
 .nav-menu .cta-button {
     background: none;
-    color: var(--white);
+    color: var(--text-secondary);
     padding: var(--spacing-sm) 0;
     box-shadow: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    font-size: 0.95rem;
 }
 
 .nav-menu .cta-button:hover {
-    color: #ff00ff;
+    color: var(--accent-primary);
     transform: none;
     box-shadow: none;
 }
@@ -332,6 +336,18 @@ header {
 
     .nav-menu a:hover,
     .nav-menu a.active {
+        color: var(--accent-primary);
+    }
+
+    .nav-menu .cta-button {
+        color: var(--text-secondary);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-weight: 500;
+        font-size: 0.95rem;
+    }
+
+    .nav-menu .cta-button:hover {
         color: var(--accent-primary);
     }
 }
